@@ -132,12 +132,12 @@ function Login() {
               <div>
                 <p className="text-sm font-light text-gray-500 dark:text-slate-800 py-2">
                   Don’t have an account yet?{" "}
-                  <a
-                    href="/signup"
+                  <Link
+                    to="/signup"
                     className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                   >
                     Sign up
-                  </a>
+                  </Link>
                 </p>
               </div>
             </form>
