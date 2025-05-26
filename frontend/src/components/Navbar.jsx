@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ThemeController from "./ThemeController";
 import userlogo from "../assets/user.png";
 import { IoFastFoodOutline } from "react-icons/io5";
@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 
 function Navbar({filterBySearch}) {
+  const navigate = useNavigate();
   // const [searchTerm, setSearchTerm] = useState("");
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -15,7 +16,7 @@ function Navbar({filterBySearch}) {
 
   const handleLogout=()=>{
     localStorage.removeItem("user");
-    window.location.href="/login";
+    navigate("/login");
   }
   return (
     <div>
@@ -92,7 +93,7 @@ function Navbar({filterBySearch}) {
                   <Link to={"/orders"}>Orders</Link>
                 </li>
                 <li onClick={handleLogout}>
-                  <a>Logout</a>
+                  <Link>Logout</Link>
                 </li>
               </ul>
             </div>
