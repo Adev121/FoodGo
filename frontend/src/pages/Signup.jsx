@@ -31,7 +31,7 @@ function Signup() {
         return;
       } else {
         const response = await axios.post(
-          "https://foodgoorder.onrender.com/api/signup",
+          "http://localhost:5000/api/signup",
           userInfo
         );
         console.log(response.data);

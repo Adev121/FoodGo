@@ -27,13 +27,13 @@ function AdminPanel() {
 
   useEffect(() => {
     //Fetching All users from backend
-    if (!(user.isAdmin && user.firstname === "admin")) {
+    if (!(user.isAdmin)) {
       alert("You are not an admin");
       navigate("/");
-    } else if (user.isAdmin && user.firstname === "admin") {
+    } else if (user.isAdmin) {
       const fetchUsers = async () => {
         try {
-          const res = await axios.get("https://foodgoorder.onrender.com/api/users");
+          const res = await axios.get("http://localhost:5000/api/users");
           const data = res.data;
           setAllUsers(data);
         } catch (error) {
@@ -45,7 +45,7 @@ function AdminPanel() {
       const fetchOrders = async () => {
         try {
           const res = await axios.get(
-            "https://foodgoorder.onrender.com/api/UserOrders/getOrder"
+            "http://localhost:5000/api/UserOrders/getOrder"
           );
           const data = res.data;
           setallOrders(data);
@@ -56,7 +56,7 @@ function AdminPanel() {
       //Fetching All FoodItems from backend
       const fetchFood = async () => {
         try {
-          const res = await axios.get("https://foodgoorder.onrender.com/api/getfood");
+          const res = await axios.get("http://localhost:5000/api/getfood");
           const data = res.data;
           setfoodItems(data);
         } catch (error) {

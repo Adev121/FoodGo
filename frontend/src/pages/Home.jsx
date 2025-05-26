@@ -14,7 +14,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("https://foodgoorder.onrender.com/api/getfood");
+        const res = await axios.get("http://localhost:5000/api/getfood");
         const data = res.data;
         setAllData(data);
         setFilteredData(data); // show all by default

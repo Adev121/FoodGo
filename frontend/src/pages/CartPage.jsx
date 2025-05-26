@@ -34,6 +34,7 @@ function CartPage() {
   console.log(totalPrice);
   const ShippingCharge = totalPrice > 300 || getCart.length === 0 ? 0 : 50;
   const Gst = Math.round(0.18 * totalPrice);
+  const totalAmount = totalPrice + ShippingCharge + Gst;
 
   const handlePayment = async () => {
     if (getCart.length === 0) {
@@ -42,14 +43,14 @@ function CartPage() {
     } else {
       try {
         const res = await axios.post(
-          "https://foodgoorder.onrender.com/api/payment/checkout",
-          { amount: totalPrice }
+          "http://localhost:5000/api/payment/checkout",
+          { amount: totalAmount }
         );
         if (res.status === 200) {
           console.log(res.data);
           const options = {
             key: "rzp_test_f8Y5JFvsPLL5sN",
-            amount: totalPrice * 100,
+            amount: totalAmount * 100,
             currency: "INR",
             name: "FoodyGo",
             description: "Test Transaction",
@@ -85,7 +86,7 @@ function CartPage() {
     };
     try {
       const response = await axios.post(
-        "https://foodgoorder.onrender.com/api/UserOrders/Orders",
+        "http://localhost:5000/api/UserOrders/Orders",
         userdata
       );
       const data = response.data;
@@ -265,17 +266,17 @@ function CartPage() {
             </div>
             <div class="mt-5 flex flex-wrap justify-center gap-4">
               <img
-                src="https://readymadeui.com/images/master.webp"
+                src="http://readymadeui.com/images/master.webp"
                 alt="card1"
                 class="w-10 object-contain"
               />
               <img
-                src="https://readymadeui.com/images/visa.webp"
+                src="http://readymadeui.com/images/visa.webp"
                 alt="card2"
                 class="w-10 object-contain"
               />
               <img
-                src="https://readymadeui.com/images/american-express.webp"
+                src="http://readymadeui.com/images/american-express.webp"
                 alt="card3"
                 class="w-10 object-contain"
               />

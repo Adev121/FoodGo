@@ -12,7 +12,7 @@ function Order() {
     const fetchOrders = async () => {
       try {
         const res = await axios.post(
-          "https://foodgoorder.onrender.com/api/UserOrders/fetchOrders",
+          "http://localhost:5000/api/UserOrders/fetchOrders",
           {
             userId: User._id,
           }
