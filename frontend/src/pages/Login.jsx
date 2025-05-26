@@ -17,7 +17,7 @@ function Login() {
     console.log(userInfo);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/login",
+        "https://foodgo-backend-af04.onrender.com/api/login",
         userInfo
       );
       console.log(response.data);

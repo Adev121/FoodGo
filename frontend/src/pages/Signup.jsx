@@ -31,7 +31,7 @@ function Signup() {
         return;
       } else {
         const response = await axios.post(
-          "http://localhost:5000/api/signup",
+          "https://foodgo-backend-af04.onrender.com/api/signup",
           userInfo
         );
         console.log(response.data);

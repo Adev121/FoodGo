@@ -14,7 +14,7 @@ const AddFood = () => {
     console.log(values);
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/addfood", values);
+      const response = await axios.post("https://foodgo-backend-af04.onrender.com/api/addfood", values);
 
       if (response.status === 200) {
         toast.success("Food added successfully!");

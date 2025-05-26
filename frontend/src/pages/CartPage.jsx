@@ -43,7 +43,7 @@ function CartPage() {
     } else {
       try {
         const res = await axios.post(
-          "http://localhost:5000/api/payment/checkout",
+          "https://foodgo-backend-af04.onrender.com/api/payment/checkout",
           { amount: totalAmount }
         );
         if (res.status === 200) {
@@ -86,7 +86,7 @@ function CartPage() {
     };
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/UserOrders/Orders",
+        "https://foodgo-backend-af04.onrender.com/api/UserOrders/Orders",
         userdata
       );
       const data = response.data;

@@ -33,7 +33,7 @@ function AdminPanel() {
     } else if (user.isAdmin) {
       const fetchUsers = async () => {
         try {
-          const res = await axios.get("http://localhost:5000/api/users");
+          const res = await axios.get("https://foodgo-backend-af04.onrender.com/api/users");
           const data = res.data;
           setAllUsers(data);
         } catch (error) {
@@ -45,7 +45,7 @@ function AdminPanel() {
       const fetchOrders = async () => {
         try {
           const res = await axios.get(
-            "http://localhost:5000/api/UserOrders/getOrder"
+            "https://foodgo-backend-af04.onrender.com/api/UserOrders/getOrder"
           );
           const data = res.data;
           setallOrders(data);
@@ -56,7 +56,7 @@ function AdminPanel() {
       //Fetching All FoodItems from backend
       const fetchFood = async () => {
         try {
-          const res = await axios.get("http://localhost:5000/api/getfood");
+          const res = await axios.get("https://foodgo-backend-af04.onrender.com/api/getfood");
           const data = res.data;
           setfoodItems(data);
         } catch (error) {
